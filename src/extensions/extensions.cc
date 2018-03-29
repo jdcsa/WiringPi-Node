@@ -1,6 +1,5 @@
 #include "extensions.h"
 
-#include "dac7678.h"
 #include "drcSerial.h"
 #include "max5322.h"
 #include "max31855.h"
@@ -17,10 +16,8 @@
 #include "pcf8591.h"
 #include "sn3218.h"
 #include "sr595.h"
-#include "pca9685.h"
 
 IMPLEMENT_EXPORT_INIT(extensions) {
-  INIT(dac7678);
   INIT(drcSerial);
   INIT(max5322);
   INIT(max31855);
@@ -37,5 +34,4 @@ IMPLEMENT_EXPORT_INIT(extensions) {
   INIT(pcf8591);
   INIT(sn3218);
   INIT(sr595);
-  INIT(pca9685);
 }

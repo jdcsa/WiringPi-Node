@@ -38,9 +38,9 @@ check_git_clone() {
 
 rm ./install.log 2>/dev/null 1>&2
 
-echo -n "Cloning libWiringPi ... "
-rm -Rf ./wiringpi 2>/dev/null 1>&2
-git clone https://github.com/nekuz0r/wiringpi.git -b 2.25 > ./install.log 2>&1
+echo -n "Cloning wiringPi ... "
+rm -Rf ./wiringPi 2>/dev/null 1>&2
+git clone https://github.com/jdcsa/wiringPi.git -b v2.46 > ./install.log 2>&1
 check_git_clone
 #git submodule init
 #check_git_clone
@@ -48,40 +48,13 @@ check_git_clone
 #check_git_clone
 echo "done."
 
-patch ./wiringpi/devLib/Makefile < ./patchs/devLib_Makefile.patch
-patch ./wiringpi/gpio/Makefile < ./patchs/gpio_Makefile.patch
-
-echo -n "Making libWiringPi ... "
-cd ./wiringpi/wiringPi/
-make clean >> ../../install.log 2>&1
-make static >> ../../install.log 2>&1
-check_make_ok "libWiringPi" 1
-cd ../../
-echo "done."
-
-cd ./wiringpi/devLib/
-echo -n "Making devLib ..."
-make clean >> ../../install.log 2>&1
-make static >> ../../install.log 2>&1
-check_make_ok "devLib" 0
-cd ../../
-echo "done."
-
-cd ./wiringpi/gpio/
-echo -n "Unistalling gpio utility ... "
-sudo make uninstall >> ../../install.log 2>&1
-echo "done."
-
-echo -n "Making gpio utility ... "
-make clean >> ../../install.log 2>&1
-make >> ../../install.log 2>&1
-check_make_ok "gpio utility" 0
-echo "done."
-
-echo -n "Installing gpio utility ... "
-sudo make install >> ../../install.log 2>&1
-check_make_ok "gpio utility" 0
-cd ../../
+echo -n "Making wiringPi ... "
+cd ./wiringPi/
+chmod +x build
+./build clean >> ../../install.log 2>&1
+./build >> ../../install.log 2>&1
+check_make_ok "wiringPi" 1
+cd ../
 echo "done."
 
 echo -n "Making wiring-pi ... "

@@ -186,6 +186,8 @@ If you need to change the pin mode, the you can do it with the gpio program in a
   <span class="api-info-list"><code> >= 1.1.0 </code></span>
 * `SOFT_TONE_OUTPUT`
   <span class="api-info-list"><code> >= 1.1.0 </code></span>
+* `PWM_TONE_OUTPUT`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
 
 ### pullUpDnControl(pin, pud)
 <span class="api-info"><code> >= 0.2.0 </code></span>
@@ -364,7 +366,7 @@ Indexes of each string table have corresponding constants
 
 * `PI_MODEL_NAME`
   * `PI_MODEL_UNKNOWN`
-  <span class="api-info-list"><code> >= 2.0.0 </code></span>
+  <span class="api-info-list"><code> >= 2.0.0 <3.0.0 </code></span>
   * `PI_MODEL_A`
   <span class="api-info-list"><code> >= 1.1.0 </code></span>
   * `PI_MODEL_AP`
@@ -377,11 +379,26 @@ Indexes of each string table have corresponding constants
   <span class="api-info-list"><code> >= 1.1.1 </code></span>
   * `PI_MODEL_2`
   <span class="api-info-list"><code> >= 2.1.0 </code></span>
-
+  * `PI_ALPHA`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
+  * `PI_MODEL_CM`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
+  * `PI_MODEL_07`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
+  * `PI_MODEL_3`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
+  * `PI_MODEL_ZERO`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
+  * `PI_MODEL_CM3`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
+  * `PI_MODEL_ZERO_W`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
+  * `PI_MODEL_3P`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
 
 * `PI_REVISION_NAMES`
   * `PI_VERSION_UNKNOWN`
-  <span class="api-info-list"><code> >= 2.0.0 </code></span>
+  <span class="api-info-list"><code> >= 2.0.0 <3.0.0 </code></span>
   * `PI_VERSION_1`
   <span class="api-info-list"><code> >= 2.0.0 </code></span>
   * `PI_VERSION_1_1`
@@ -397,11 +414,13 @@ Indexes of each string table have corresponding constants
   * `PI_MAKER_EGOMAN`
   <span class="api-info-list"><code> >= 2.0.0 </code></span>
   * `PI_MAKER_MBEST`
-  <span class="api-info-list"><code> >= 2.1.0 </code></span>
+  <span class="api-info-list"><code> >= 2.1.0 <3.0.0 </code></span>
   * `PI_MAKER_SONY`
   <span class="api-info-list"><code> >= 2.0.0 </code></span>
   * `PI_MAKER_QISDA`
-  <span class="api-info-list"><code> >= 2.0.0 </code></span>
+  <span class="api-info-list"><code> >= 2.0.0 <3.0.0 </code></span>
+  * `PI_MAKER_EMBEST`
+  <span class="api-info-list"><code> >= 3.0.0 </code></span>
 
 ### wpiPinToGpio(pin)
 <span class="api-info"><code> >= 1.0.0 </code></span>
@@ -734,20 +753,20 @@ The tone will be played until you set the frequency to 0.
 *Datasheet*: http://www.ti.com/lit/ds/sbas493c/sbas493c.pdf
 
 #### dac7678Setup(pinBase, i2cAddress, vrefMode)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 `state` can be one of the following value:
 
 * `DAC7678_VREF_MODE_STATIC_ON`
-<span class="api-info-list"><code> >= 2.0.0 </code></span>
+<span class="api-info-list"><code> >= 2.0.0 <3.0.0 </code></span>
 * `DAC7678_VREF_MODE_STATIC_OFF`
-<span class="api-info-list"><code> >= 2.0.0 </code></span>
+<span class="api-info-list"><code> >= 2.0.0 <3.0.0 </code></span>
 * `DAC7678_VREF_MODE_FLEXIBLE_ON`
-<span class="api-info-list"><code> >= 2.0.0 </code></span>
+<span class="api-info-list"><code> >= 2.0.0 <3.0.0 </code></span>
 * `DAC7678_VREF_MODE_FLEXIBLE_ALWAYS_ON`
-<span class="api-info-list"><code> >= 2.0.0 </code></span>
+<span class="api-info-list"><code> >= 2.0.0 <3.0.0 </code></span>
 * `DAC7678_VREF_MODE_FLEXIBLE_ALWAYS_OFF`
-<span class="api-info-list"><code> >= 2.0.0 </code></span>
+<span class="api-info-list"><code> >= 2.0.0 <3.0.0 </code></span>
 
 ### drcSerial
 
@@ -860,7 +879,7 @@ Cold-junction compensated thermocouple-to-digital converter (SPI)
 *Datasheet*: http://www.adafruit.com/datasheets/PCA9685.pdf
 
 #### pca9685Setup(pinBase, i2cAddress, frequency)
-<span class="api-info"><code> >= 1.1.0 </code></span>
+<span class="api-info"><code> >= 1.1.0 <3.0.0 </code></span>
 
 ### pcf8574
 
@@ -1132,50 +1151,50 @@ Color light-to-digital converter with IR filter
 *Datasheet*: http://www.adafruit.com/datasheets/TCS34725.pdf
 
 #### tcs34725Setup(i2cAddress, integrationTime, gain)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Initialize the device and returns the assigned id.
 Don't forget to call `tcs34725Enable`, the device is in power sleep mode after initialization.
 
 #### tcs34725ReadRGBC(id)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Read the raw red, green, blue and clear channel values (0 - 255)
 
 #### tcs34725ReadHSV(id)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Returns the cylindrical-coordinate representation of the sensor red, green and blue channels.
 
 #### tcs34725GetCorrelatedColorTemperature(r, g, b)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Convert the raw R/G/B values to color temperature in degrees Kelvin
 
 #### tcs34725GetIlluminance(r, g, b)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Convert the raw R/G/B values to illuminance in Lux
 
 #### tcs34725SetInterrupt(id, aien)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Enable/Disable interrupt
 
 #### tcs34725ClearInterrupt(id)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Clear interrupt
 
 #### tcs34725SetInterruptLimits(id, low, high)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 #### tcs34725Enable(id)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Enable the device
 
 #### tcs34725Disable(id)
-<span class="api-info"><code> >= 2.0.0 </code></span>
+<span class="api-info"><code> >= 2.0.0 <3.0.0 </code></span>
 
 Disable the device (putting it in lower power sleep mode)

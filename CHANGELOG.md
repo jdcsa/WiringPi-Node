@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## v3.0.0+lib2_46 *[Mar 29 2018]*
+
+  * **Update:** libWiringPi to v2.46 `essentia0`
+  * **Update:** libWiringPi is linked as dynamic library `essentia0`
+  * **Add:** constant PWM_TONE_OUTPUT `essentia0`
+  * **Remove:** constant PI_MODEL_UNKNOWN `essentia0`
+  * **Add:** constant PI_MODEL_ALPHA `essentia0`
+  * **Add:** constant PI_MODEL_CM `essentia0`
+  * **Add:** constant PI_MODEL_07 `essentia0`
+  * **Add:** constant PI_MODEL_3 `essentia0`
+  * **Add:** constant PI_MODEL_ZERO `essentia0`
+  * **Add:** constant PI_MODEL_CM3 `essentia0`
+  * **Add:** constant PI_MODEL_ZERO_W `essentia0`
+  * **Add:** constant PI_MODEL_3P `essentia0`
+  * **Remove:** constant PI_VERSION_UNKNOWN `essentia0`
+  * **Remove:** constant PI_MAKER_QISDA `essentia0`
+  * **Update:** rename constant PI_MAKER_EMBEST from PI_MAKER_MBEST `essentia0`
+  * **Remove:** tcs34725 support `essentia0`
+  * **Remove:** dac7678 support `essentia0`
+  * **Remove:** pca9685 support `essentia0`
+
 ## v2.2.0 *[Oct 6 2016]*
   * **Fix:** pinModeAlt mode argument is cheked in (FSEL_INPT, FSEL_OUTP, FSEL_ALT0, FSEL_ALT1, FSEL_ALT2, FSEL_ALT3, FSEL_ALT4, FSEL_ALT5) `NoHomey`
   * **Fix:** sn3218Setup is a function `NoHomey`

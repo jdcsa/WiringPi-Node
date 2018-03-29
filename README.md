@@ -1,11 +1,13 @@
 Node.js bindings to [wiringPi](http://www.wiringpi.com)
 
-Based on the awesome work of [Soarez](https://github.com/Soarez/node-wiring-pi)
+Forked from [official repo](https://github.com/WiringPi/WiringPi-Node)
 
 ## Install
 
 ```
-npm install wiring-pi
+npm install git+https://github.com/jdcsa/WiringPi-Node.git#[tag]
+
+eg. npm install git+https://github.com/jdcsa/WiringPi-Node.git#v3.0.0+lib2_46
 ```
 
 ## Usage
@@ -15,7 +17,7 @@ var wpi = require('wiring-pi');
 ```
 ## Documentation
 
-See the [DOCUMENTATION.md](https://github.com/WiringPi/WiringPi-Node/blob/master/DOCUMENTATION.md) file for more detailed documentation.
+See the [DOCUMENTATION.md](https://github.com/jdcsa/WiringPi-Node/blob/master/DOCUMENTATION.md) file for more detailed documentation.
 
 ## Contributing
 
@@ -23,7 +25,7 @@ wiring-pi is an [**OPEN Open Source Project**](http://openopensource.org/). This
 
 > Individuals making significant and valuable contributions are given commit-access to the project to contribute as they see fit. This project is more like an open wiki than a standard guarded open source project.
 
-See the [CONTRIBUTING.md](https://github.com/WiringPi/WiringPi-Node/blob/master/CONTRIBUTING.md) file for more details.
+See the [CONTRIBUTING.md](https://github.com/jdcsa/WiringPi-Node/blob/master/CONTRIBUTING.md) file for more details.
 
 ### Contributors
 

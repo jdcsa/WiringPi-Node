@@ -1,6 +1,7 @@
 {
   "name": "wiring-pi",
-  "version": "2.2.1",
+  "version": "3.0.0",
+  "private": true,
   "description": "Bindings to wiringPi",
   "main": "lib/exports.js",
   "scripts": {

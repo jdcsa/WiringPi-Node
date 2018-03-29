@@ -170,6 +170,12 @@ IMPLEMENT(wiringPiISR) {
   SCOPE_CLOSE(UNDEFINED());
 }
 
+extern pthread_t* threadIds; // decl in wiringPi/wiringPi/wiringPi.c
+
+int wiringPiISRCancel(int pin) {
+    return pthread_cancel(threadIds[pin]);
+}
+
 DECLARE(wiringPiISRCancel);
 IMPLEMENT(wiringPiISRCancel) {
   SCOPE_OPEN();

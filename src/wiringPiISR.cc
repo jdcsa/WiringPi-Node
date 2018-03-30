@@ -170,30 +170,6 @@ IMPLEMENT(wiringPiISR) {
   SCOPE_CLOSE(UNDEFINED());
 }
 
-extern pthread_t* threadIds; // decl in wiringPi/wiringPi/wiringPi.c
-
-int wiringPiISRCancel(int pin) {
-    return pthread_cancel(threadIds[pin]);
-}
-
-DECLARE(wiringPiISRCancel);
-IMPLEMENT(wiringPiISRCancel) {
-  SCOPE_OPEN();
-
-  SET_ARGUMENT_NAME(0, pin);
-
-  CHECK_ARGUMENTS_LENGTH_EQUAL(1);
-
-  CHECK_ARGUMENT_TYPE_INT32(0);
-
-  int pin = GET_ARGUMENT_AS_INT32(0);
-
-  ::wiringPiISRCancel(pin);
-  uv_close((uv_handle_t*)&async_handlers[pin], NULL);
-
-  SCOPE_CLOSE(UNDEFINED());
-}
-
 IMPLEMENT_EXPORT_INIT(wiringPiISR) {
     REGISTER_NATIVE_INTERRUPT_HANDLER(0);
     REGISTER_NATIVE_INTERRUPT_HANDLER(1);
@@ -261,7 +237,6 @@ IMPLEMENT_EXPORT_INIT(wiringPiISR) {
     REGISTER_NATIVE_INTERRUPT_HANDLER(63);
 
     EXPORT_FUNCTION(wiringPiISR);
-    EXPORT_FUNCTION(wiringPiISRCancel);
 
     EXPORT_CONSTANT_INT(INT_EDGE_FALLING);
     EXPORT_CONSTANT_INT(INT_EDGE_RISING);

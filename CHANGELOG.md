@@ -20,7 +20,8 @@
   * **Remove:** tcs34725 support `essentia0`
   * **Remove:** dac7678 support `essentia0`
   * **Remove:** pca9685 support `essentia0`
-
+  * **Remove:** wiringPiISRCancel `essentia0`
+  
 ## v2.2.0 *[Oct 6 2016]*
   * **Fix:** pinModeAlt mode argument is cheked in (FSEL_INPT, FSEL_OUTP, FSEL_ALT0, FSEL_ALT1, FSEL_ALT2, FSEL_ALT3, FSEL_ALT4, FSEL_ALT5) `NoHomey`
   * **Fix:** sn3218Setup is a function `NoHomey`

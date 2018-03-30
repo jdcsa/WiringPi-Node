@@ -331,7 +331,7 @@ wpi.wiringPiISR(7, wpi.INT_EDGE_FALLING, function(delta) {
 });
 ```
 ### wiringPiISRCancel(pin)
-<span class="api-info"><code> >= 2.1.0 </code></span>
+<span class="api-info"><code> >= 2.1.0 < 3.0.0 </code></span>
 
 ---
 
